@@ -1,0 +1,4 @@
+build/
+.vscode/
+README.txt
+CMakeOut.txt

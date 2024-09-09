@@ -5,9 +5,12 @@ add_executable(${OUTPUT_NAME}
 # pull in common dependencies
 target_link_libraries(${OUTPUT_NAME} pico_stdlib)
 
-if (PICO_CYW43_SUPPORTED)
-    target_link_libraries(${OUTPUT_NAME} pico_cyw43_arch_none)
-endif()
+target_include_directories(${OUTPUT_NAME} PRIVATE
+    ${CMAKE_CURRENT_LIST_DIR}
+    ${CMAKE_CURRENT_LIST_DIR}/include
+    ${PROJECT_BINARY_DIR}
+    ${LOG_DIRECTORY}
+    )
 
 pico_enable_stdio_uart(${OUTPUT_NAME} 1)
 pico_enable_stdio_usb(${OUTPUT_NAME} 1)

@@ -9,7 +9,7 @@ mkdir build
 cd build
 rd /s /q . 2>nul
 
-cmake -G "MinGW Makefiles" ..
+cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Debug ..
 cmake --build . --target all -j
 cd ..
 GOTO END
